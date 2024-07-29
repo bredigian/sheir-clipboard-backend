@@ -12,10 +12,10 @@ const app = Express()
 app.use(cors())
 app.use(Express.json())
 
-const PORT = process.env.PORT ?? 3000
+const PORT = 4096
 
 app.get("/", (_, res) => {
-  res.json({ message: "LocalClipboard Websocket", ip: address() })
+  res.json({ message: "Sheir Clipboard's Server", ip: address() })
 })
 
 const socketServer = createServer(app)
@@ -39,5 +39,5 @@ io.on("connection", (socket) => {
 })
 
 socketServer.listen(PORT, () =>
-  console.log(`LocalClipboard Websocket at PORT ${PORT}`)
+  console.log(`Sheir Clipboard's Server at PORT ${PORT}`)
 )
